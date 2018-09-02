@@ -6,7 +6,7 @@ var baseUrl = 'https://newsapi.org/v2/';
 var defaultCountry = 'us';
 
 /* GET home page. */
-router.get('/headlines', function(req, res, next) {
+router.get('/headlines', (req, res, next) => {
   var country;
   var category;
   var params = {};
@@ -16,7 +16,7 @@ router.get('/headlines', function(req, res, next) {
     params.category = category;
   }
 
-  let options = {
+  var options = {
     uri: baseUrl+'top-headlines',
     qs: params,
     headers: {
